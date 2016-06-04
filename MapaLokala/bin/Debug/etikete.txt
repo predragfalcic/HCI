@@ -1,0 +1,16 @@
+E2|Novo dodata etiketa 2|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E3|Novo dodata etiketa 3|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E13|Novo dodata etiketa 13|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E5|Novo dodata etiketa 5|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E6|Novo dodata etiketa 6|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E7|Novo dodata etiketa 7|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E4|Novo dodata etiketa 4|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E8|Novo dodata etiketa 8|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E9|Novo dodata etiketa 9|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E10|Novo dodata etiketa 10|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E11|Novo dodata etiketa 11|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E12|Novo dodata etiketa 12|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E15|Novo dodata etiketa 15|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E14|Novo dodata etiketa 14|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E1|Novo dodata etiketa 1|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+E16|Novo dodata etiketa 16|Etiketa koja je poslednja dodata|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False

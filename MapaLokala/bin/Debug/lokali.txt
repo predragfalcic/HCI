@@ -1,0 +1,4 @@
+sdadd|sddsd|ewew|11111|Etiketa 3|novi|Sluzi se samo do 23h|Srednje cene|True|False|True|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\intro.jpg
+dsd|dsd|ds|1231|Etiketa 2#Etiketa 3|novi|Sluzi se samo do 23h|Niske cene|True|True|True|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\two.jpg
+dddd|ddddd|ddddd|123321|Proba#2222|sdddd|Ne sluzi se|Izuzetno visoke cene|True|False|True|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\one.jpg
+dssddd|dddds|aaaa|1232321|Etiketa 2|novi|Sluzi se samo do 23h|Srednje cene|True|False|True|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\two.jpg

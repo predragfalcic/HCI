@@ -1,0 +1,33 @@
+﻿<Window x:Class="MapaLokala.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mapa Lokala" Height="350" Width="525">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <Menu.ItemsPanel><!--Podkontrola koja određuje kako se item-i prikazuju.-->
+                <ItemsPanelTemplate><!-- Specificiramo ne šta je u kontroli nego template koji je formira-->
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel><!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_Opcije" HorizontalAlignment="Left">
+                <MenuItem Header="_Lokal">
+                    <MenuItem Header="Dodaj lokal" Click="DodajLokal_click"></MenuItem>
+                    <MenuItem Header="Izmeni lokal"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Tip Lokala">
+                    <MenuItem Header="Dodaj tip lokala" Click="DodajTipLokala_click"></MenuItem>
+                    <MenuItem Header="Izmeni tip lokala"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Etikete">
+                    <MenuItem Header="Dodaj etiketu" Click="DodajEtiketu_click"></MenuItem>
+                    <MenuItem Header="Izmeni etiketu" Click="IzmeniEtiketu_click"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Dodaj na mapi" HorizontalAlignment="Left"></MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Image Name="img_mapa" Height="Auto" Width="Auto">
+            </Image>
+        </Grid>
+    </DockPanel>
+</Window>
