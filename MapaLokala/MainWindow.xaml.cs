@@ -28,6 +28,17 @@ namespace MapaLokala
         private Point startPoint = new Point();
         private CitanjePisanjeuFile cpf = new CitanjePisanjeuFile();
         DodajLokal dl = new DodajLokal();
+
+        public static RoutedCommand novi_lokal = new RoutedCommand();
+        public static RoutedCommand izmeni_lokal = new RoutedCommand();
+        public static RoutedCommand nova_etiketa = new RoutedCommand();
+        public static RoutedCommand izmeni_etiketu = new RoutedCommand();
+        public static RoutedCommand novi_tip = new RoutedCommand();
+        public static RoutedCommand izmeni_tip = new RoutedCommand();
+        public static RoutedCommand osvezi = new RoutedCommand();
+        public static RoutedCommand obrisi = new RoutedCommand();
+        public static RoutedCommand izlaz = new RoutedCommand();
+
         private ImageSource _image;
         
         public ImageSource Image
@@ -42,6 +53,33 @@ namespace MapaLokala
                 {
                     _image = value;
                 }
+            }
+        }
+
+        private string _searchText;
+
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+
+                    OnPropertyChanged("SearchText");
+                    OnPropertyChanged("PretrazeniLokali");
+                }
+            }
+        }
+
+        public IEnumerable<Lokal> PretrazeniLokali
+        {
+            get
+            {
+                if (SearchText == null) return lokali;
+
+                return lokali.Where(x => x.Ime.ToUpper().StartsWith(SearchText.ToUpper()) && x.NaMapi==false);
             }
         }
 
@@ -85,6 +123,26 @@ namespace MapaLokala
             cpf.procitajIzFileEtikete();
             cpf.procitajIzFileTipoveLokala();
             lokali = cpf.procitajIzFileLokale();
+            novi_lokal.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
+            izmeni_lokal.InputGestures.Add(new KeyGesture(Key.O , ModifierKeys.Control));
+            nova_etiketa.InputGestures.Add(new KeyGesture(Key.E , ModifierKeys.Control));
+            izmeni_etiketu.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control));
+            novi_tip.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
+            izmeni_tip.InputGestures.Add(new KeyGesture(Key.Y, ModifierKeys.Control));
+            osvezi.InputGestures.Add(new KeyGesture(Key.R, ModifierKeys.Control));
+            obrisi.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
+            izlaz.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
+
+            CommandBindings.Add(new CommandBinding(novi_lokal, DodajLokal_click));
+            CommandBindings.Add(new CommandBinding(izmeni_lokal, IzmeniLokal_click));
+            CommandBindings.Add(new CommandBinding(nova_etiketa, DodajEtiketu_click));
+            CommandBindings.Add(new CommandBinding(izmeni_etiketu, IzmeniEtiketu_click));
+            CommandBindings.Add(new CommandBinding(novi_tip, DodajTipLokala_click));
+            CommandBindings.Add(new CommandBinding(izmeni_tip, IzmeniTipLokala_click));
+            CommandBindings.Add(new CommandBinding(osvezi, MenuItem_Click));
+            CommandBindings.Add(new CommandBinding(obrisi, obrisiSaMape_Click));
+            CommandBindings.Add(new CommandBinding(izlaz, Izlaz_click));
+
             razvrstajLokale();
             izbaciLokaleSaMape();
             ispisiLokaleNaMapi();
@@ -148,14 +206,20 @@ namespace MapaLokala
                 ListView listView = sender as ListView;
                 ListViewItem listViewItem =
                     FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
-
+                Lokal lokal = null;
                 // Find the data behind the ListViewItem
-                Lokal lokal = (Lokal)listView.ItemContainerGenerator.
-                    ItemFromContainer(listViewItem);
+                if (listViewItem != null)
+                {
+                    lokal = (Lokal)listView.ItemContainerGenerator.
+                        ItemFromContainer(listViewItem);
+                }
 
-                // Initialize the drag & drop operation
-                DataObject dragData = new DataObject("myFormat", lokal);
-                DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Move);
+                if (lokal != null)
+                {
+                    // Initialize the drag & drop operation
+                    DataObject dragData = new DataObject("myFormat", lokal);
+                    DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Move);
+                }
             }
         }
 
@@ -209,6 +273,7 @@ namespace MapaLokala
                     dl.upisiLokalUFile(lokali);
                     razvrstajLokale();
                     izbaciLokaleSaMape();
+                    OnPropertyChanged("PretrazeniLokali");
                 }
 
                 
@@ -220,6 +285,7 @@ namespace MapaLokala
             foreach (Lokal l in listaLokalaNaMapi) {
                 lokali.Remove(l);
             }
+            OnPropertyChanged("PretrazeniLokali");
         }
 
         private void ispisiLokaleNaMapi() {
@@ -235,9 +301,9 @@ namespace MapaLokala
                     img.SetValue(Canvas.LeftProperty, l.X);
                     img.SetValue(Canvas.TopProperty, l.Y);
                     img_mapa.Children.Add(img);
-
                 }
             }
+            OnPropertyChanged("PretrazeniLokali");
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -247,6 +313,30 @@ namespace MapaLokala
             razvrstajLokale();
             ispisiLokaleNaMapi();
             izbaciLokaleSaMape();
+            OnPropertyChanged("PretrazeniLokali");
+        }
+
+        //Brisemo lokale sa mape i vracamo ih u listi sa leve strane
+        private void obrisiSaMape_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Lokal l in listaLokalaNaMapi)
+            {
+                l.NaMapi = false;
+                lokali.Add(l);
+            }
+            listaLokalaNaMapi.Clear();
+            dl.upisiLokalUFile(lokali);
+            lokali.Clear();
+            lokali = cpf.procitajIzFileLokale();
+            razvrstajLokale();
+            ispisiLokaleNaMapi();
+            izbaciLokaleSaMape();
+            OnPropertyChanged("PretrazeniLokali");
+        }
+
+        private void Izlaz_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -116,3 +116,5 @@ C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.Properti
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.csproj.GenerateResource.Cache
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.baml
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\LogiWindow.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\LogiWindow.g.cs

@@ -4,7 +4,25 @@
         xmlns:eo="http://schemas.essentialobjects.com/wpf/"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:cvt="clr-namespace:MapaLokala.Dodaj_lokal"
-        Title="DodajLokal" Height="382" Width="600">
+        Title="Dodaj Lokal" Height="382" Width="600">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="baseStyle">
+            <Setter Property="FontSize" Value="22" />
+        </Style>
+        
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type DatePickerTextBox}" BasedOn="{StaticResource baseStyle}"></Style>
+        <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource baseStyle}"></Style>
+        
+        <!-- ComboBox, RadioButton, CheckBox, etc... -->
+    </Window.Resources>
     
     <Grid>
         <Grid.RowDefinitions>
@@ -27,19 +45,19 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0">Oznaka lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1">Ime lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2">Opis lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="3">Izaberite tip lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4">Status za sluzenje alkohola: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="5">Ikona lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="6">Da li je lokal dostupan za hendikepirane? </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="7">Da li je u lokalu dozvoljeno pusenje? </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="8">Da li lokal prima rezervacije? </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="9">Izaberite kategoriju cena u lokalu: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="10">Kapacitet lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="11">Datum otvaranja lokala: </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="12">Tagujte restoran: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="0">Oznaka lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="1">Ime lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="2">Opis lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="3">Izaberite tip lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="4">Status za sluzenje alkohola: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="5">Ikona lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="6">Da li je lokal dostupan za hendikepirane? </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="7">Da li je u lokalu dozvoljeno pusenje? </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="8">Da li lokal prima rezervacije? </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="9">Izaberite kategoriju cena u lokalu: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="10">Kapacitet lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="11">Datum otvaranja lokala: </TextBlock>
+        <TextBlock FontSize="22" Grid.Column="0" Grid.Row="12">Tagujte restoran: </TextBlock>
 
         <TextBox Name="txt_oznakaLokala" Grid.Column="1" Grid.Row="0" Width="Auto"></TextBox>
         <TextBox Name="txt_imeLokala" Grid.Column="1" Grid.Row="1" Width="Auto"></TextBox>
@@ -48,7 +66,15 @@
         <ComboBox Name="cmb_TipLokala" Grid.Column="1" Grid.Row="3" IsEditable="False" ItemsSource="{Binding Path=tipoviLokala}"/>
         <ComboBox Name="cmb_statusSluzenjaAlkohola" Grid.Column="1" Grid.Row="4" IsEditable="False" ItemsSource="{Binding Path=statusSluzenjaAlkohola}" />
 
-        <Button Name="btn_loadImage" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Click="btn_loadImage_Click" Margin="3" >Ucitaj ikonu</Button>
+        <Button Name="btn_loadImage" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Click="btn_loadImage_Click" >
+            <Button.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5" TextWrapping="Wrap" MaxWidth="100">
+                        Pritiskom na ovo dugme ucitacete ikonu za vas lokal.
+                    </TextBlock>
+                </StackPanel>
+            </Button.ToolTip>
+            Ucitaj ikonu</Button>
         <Image Name="img_ikonaLokala" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" Height="Auto" Width="Auto" Margin="3">
         </Image>
 
@@ -62,14 +88,14 @@
 
         <TextBox Name="txt_kapacitetLokala" Grid.Column="1" Grid.Row="10" Width="Auto"></TextBox>
 
-        <DatePicker Name="dp_datum" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="11"
+        <DatePicker Width="115" Name="dp_datum" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="11"
 		    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
 
         <!--<TextBlock Grid.Column="1" Grid.Row="11" HorizontalAlignment="Left" Margin="229,0,0,0">Godina: </TextBlock>-->
         <!--<eo:DatePicker Name="dtp_datumOtvaranjaLokala" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Left" Width="Auto"></eo:DatePicker>
         <TextBlock Grid.Column="1" Grid.Row="11" WidLeftth="Auto" HorizontalAlignment="Center">Format: Mesec/Dan/Godina</TextBlock>-->
 
-        <eo:ComboBox ShowCheckBoxes="True" Name="cmb_Etiketa" Grid.Column="1" Grid.Row="12" IsEditable="False" ItemsSource="{Binding Path=etikete}">
+        <eo:ComboBox FontSize="22" ShowCheckBoxes="True" Name="cmb_Etiketa" Grid.Column="1" Grid.Row="12" IsEditable="False" ItemsSource="{Binding Path=etikete}">
             <!--Custom FooterTemplate-->
             <eo:ComboBox.FooterTemplate>
                 <DataTemplate>
@@ -82,10 +108,26 @@
         </eo:ComboBox>
 
         <Button Name="btnOdustani" Grid.Column="0" Grid.Row="13" HorizontalAlignment="Left" 
-            MinWidth="80" Margin="3" Content="Odustani" Click="btnOdustani_Click" />
-          
+            MinWidth="80" Margin="3" Content="Odustani" Click="btnOdustani_Click" >
+            <Button.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5" TextWrapping="Wrap" MaxWidth="100">
+                        Pritiskom na ovo dugme ponisticete sve sto ste uneli i lokal nece biti kreiran.
+                    </TextBlock>
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
+
         <Button Name="btnSacuvaj" Grid.Column="1" Grid.Row="13" HorizontalAlignment="Right" 
-            MinWidth="80" Margin="3" Content="Sacuvaj" Click="btnSacuvaj_Click" />
+            MinWidth="80" Margin="3" Content="Sacuvaj" Click="btnSacuvaj_Click">
+            <Button.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5" TextWrapping="Wrap" MaxWidth="100">
+                        Pritiskom na ovo dugme kreiracete novi lokal.
+                    </TextBlock>
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
         
     </Grid>
 </Window>

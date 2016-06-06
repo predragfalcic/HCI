@@ -165,68 +165,108 @@ namespace MapaLokala.Dodaj_lokal
             string oznakaLokala = txt_oznakaLokala.Text;
             string imeLokala = txt_imeLokala.Text;
             string opisLokala = txt_opisLokala.Text;
+            string tipLokala = cmb_TipLokala.SelectionBoxItem.ToString();
+            string statusSluzenjaAlkohola = cmb_statusSluzenjaAlkohola.SelectionBoxItem.ToString();
+            string kategorijeCena = cmb_kategorijeCena.SelectionBoxItem.ToString();
+            string datum = "";
 
             bool zaHendikepirane = false;
             bool smePusenje = false;
             bool primeRezervacije = false;
 
             int kapacitetLokala;
-            if (Int32.TryParse(txt_kapacitetLokala.Text, out kapacitetLokala))
+
+            Lokal l = pronadjiLokalPoOznaci(oznakaLokala);
+            try
             {
-
-                if (rdb_hendikepirani_da.IsChecked == true)
-                {
-                    zaHendikepirane = true;
-                }
-                else
-                {
-                    zaHendikepirane = false;
-                }
-
-                if (rdb_pusenje_da.IsChecked == true)
-                {
-                    smePusenje = true;
-                }
-                else
-                {
-                    smePusenje = false;
-                }
-
-                if (rdb_rezervacije_da.IsChecked == true)
-                {
-                    primeRezervacije = true;
-                }
-                else
-                {
-                    primeRezervacije = false;
-                }
-
-                string tipLokala = cmb_TipLokala.SelectionBoxItem.ToString();
-                DodajTipLokala dtl = new DodajTipLokala();
-                tip = dtl.pronadjiTipPoNazivu(tipLokala);
-                string statusSluzenjaAlkohola = cmb_statusSluzenjaAlkohola.SelectionBoxItem.ToString();
-
-                string kategorijeCena = cmb_kategorijeCena.SelectionBoxItem.ToString();
-
-                IList etikete = new ObservableCollection<string>();
-                etikete = cmb_Etiketa.SelectedItems;
-
-                ObservableCollection<Etiketa> lista = new ObservableCollection<Etiketa>();
-                de = new DodajEtiketu();
-                foreach (string et in etikete)
-                {
-                    lista.Add(de.pronadjiEtiketuPoNazivu(et));
-                }
-
-                string datum = dp_datum.SelectedDate.Value.ToShortDateString();
-                Lokal lokal = new Lokal(oznakaLokala, imeLokala, opisLokala, kapacitetLokala, lista, tip, statusSluzenjaAlkohola, kategorijeCena, primeRezervacije, smePusenje, zaHendikepirane, url, datum);
-                lokali.Add(lokal);
-                upisiLokalUFile(lokali);
-                this.Close();
+                datum = dp_datum.SelectedDate.Value.ToShortDateString();
             }
-            else
+            catch
             {
-                MessageBox.Show("Molimo vas unesti ceo broj za kapacitet lokala.");
+                
+            }
+            if (oznakaLokala.Length > 0 && imeLokala.Length > 0 && opisLokala.Length > 0 && statusSluzenjaAlkohola.Length > 0 && kategorijeCena.Length > 0 && tipLokala.Length > 0 && url != null)
+            {
+                if (datum != "")
+                {
+                    if (l == null)
+                    {
+                        if (Int32.TryParse(txt_kapacitetLokala.Text, out kapacitetLokala))
+                        {
+
+                            if (rdb_hendikepirani_da.IsChecked == true)
+                            {
+                                zaHendikepirane = true;
+                            }
+                            else
+                            {
+                                zaHendikepirane = false;
+                            }
+
+                            if (rdb_pusenje_da.IsChecked == true)
+                            {
+                                smePusenje = true;
+                            }
+                            else
+                            {
+                                smePusenje = false;
+                            }
+
+                            if (rdb_rezervacije_da.IsChecked == true)
+                            {
+                                primeRezervacije = true;
+                            }
+                            else
+                            {
+                                primeRezervacije = false;
+                            }
+
+                            
+                            DodajTipLokala dtl = new DodajTipLokala();
+                            tip = dtl.pronadjiTipPoNazivu(tipLokala);
+                            
+
+                            
+
+                            IList etikete = new ObservableCollection<string>();
+                            etikete = cmb_Etiketa.SelectedItems;
+
+                            if (etikete.Count > 0)
+                            {
+                                ObservableCollection<Etiketa> lista = new ObservableCollection<Etiketa>();
+                                de = new DodajEtiketu();
+                                foreach (string et in etikete)
+                                {
+                                    lista.Add(de.pronadjiEtiketuPoNazivu(et));
+                                }
+
+                                Lokal lokal = new Lokal(oznakaLokala, imeLokala, opisLokala, kapacitetLokala, lista, tip, statusSluzenjaAlkohola, kategorijeCena, primeRezervacije, smePusenje, zaHendikepirane, url, datum);
+                                lokali.Add(lokal);
+                                upisiLokalUFile(lokali);
+                                MessageBox.Show("Lokal uspesno dodat. Osvezite stranicu da bi se prikazale izmene.");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Molimo vas izaberite neku od ponudjenih etiketa.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Molimo vas unesti broj za kapacitet lokala. Na primer: 100, 50, 44...");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lokal sa datom oznakom vec postoji. Molimo vas unesite drugu oznaku za lokal.");
+                    }
+                }
+                else {
+                    MessageBox.Show("Molimo vas izaberite datum. ");
+                }
+            }
+            else {
+                MessageBox.Show("Da bi ste kreirali lokal potrebno je popuniti sva polja. ");
             }
 
             

@@ -88,11 +88,27 @@ namespace MapaLokala.Dodaj_tip_lokala
             string ime = txt_imeTipaLokala.Text;
             string opis = txt_opisTipaLokala.Text;
 
-            TipLokala tipLokala = new TipLokala(oznaka, ime, opis, url);
-            tipoviLokala.Add(tipLokala);
-            upisiTipLokalaUFile(tipoviLokala);
-            MessageBox.Show("Tip lokala je uspesno sacuvan");
-            this.Close();
+            
+
+            if (oznaka.Length > 0 && ime.Length > 0 && opis.Length > 0 && url != null)
+            {
+                TipLokala t = pronadjiTipPoOznaci(oznaka);
+                if (t == null)
+                {
+                    TipLokala tipLokala = new TipLokala(oznaka, ime, opis, url);
+                    tipoviLokala.Add(tipLokala);
+                    upisiTipLokalaUFile(tipoviLokala);
+                    MessageBox.Show("Tip lokala je uspesno sacuvan");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Tip lokala sa tom oznakom vec postoji. Molimo vas unesite drugu oznaku.");
+                }
+            }
+            else {
+                MessageBox.Show("Da bi ste kreirali tip lokal potrebno je popuniti sva polja. ");
+            }
         }
 
         public void upisiTipLokalaUFile(ObservableCollection<TipLokala> listaTipova)
@@ -119,7 +135,7 @@ namespace MapaLokala.Dodaj_tip_lokala
         {
             foreach (TipLokala tip in tipoviLokala)
             {
-                if (oznaka.Equals(tip.OznakaTipaLokala))
+                if (oznaka.Equals(tip.OznakaTipaLokala) && tip.Obrisan == false)
                 {
                     return tip;
                 }

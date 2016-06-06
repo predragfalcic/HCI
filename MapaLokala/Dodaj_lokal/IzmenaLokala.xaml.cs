@@ -258,6 +258,7 @@ namespace MapaLokala.Dodaj_lokal
 
             string kategorijeCena = cmb_kategorijeCena.SelectionBoxItem.ToString();
 
+            string datum = "";
             int kapacitetLokala;
             if (Int32.TryParse(txt_kapacitetLokala.Text, out kapacitetLokala))
             {
@@ -272,45 +273,56 @@ namespace MapaLokala.Dodaj_lokal
                     lista.Add(dodajEtiketu.pronadjiEtiketuPoNazivu(et));
                 }
 
-                string datum = dp_datum.SelectedDate.Value.ToShortDateString();
+                try
+                {
+                    datum = dp_datum.SelectedDate.Value.ToShortDateString();
+                }
+                catch
+                {
+                    MessageBox.Show("Molimo vas izaberite datum. ");
+                }
 
                 Lokal lokal = (Lokal)dgrMain.SelectedItem;
 
-                if (lokal != null)
+                if (datum != "")
                 {
-                    lokal.Ime = Ime_etikete;
-                    lokal.Opis = Opis_etikete;
-                    lokal.Hendikepirani = zaHendikepirane;
-                    lokal.Pusenje = smePusenje;
-                    lokal.Rezervacija = primeRezervacije;
-                    lokal.Tiplokala = tip;
-                    lokal.StatusSluzenjaAlkohola = statusSluzenjaAlkohola;
-                    lokal.KategorijaCena = kategorijeCena;
-                    if (lista.Count > 0)
+                    if (lokal != null)
                     {
-                        lokal.Lista_etiketa = lista;
-                    }
-                    lokal.KapacitetLokala = kapacitetLokala;
+                        lokal.Ime = Ime_etikete;
+                        lokal.Opis = Opis_etikete;
+                        lokal.Hendikepirani = zaHendikepirane;
+                        lokal.Pusenje = smePusenje;
+                        lokal.Rezervacija = primeRezervacije;
+                        lokal.Tiplokala = tip;
+                        lokal.StatusSluzenjaAlkohola = statusSluzenjaAlkohola;
+                        lokal.KategorijaCena = kategorijeCena;
+                        if (lista.Count > 0)
+                        {
+                            lokal.Lista_etiketa = lista;
+                        }
+                        lokal.KapacitetLokala = kapacitetLokala;
 
-                    if (datum.Length > 0)
-                    {
-                        lokal.DatumOtvaranja = datum;
+                        if (datum.Length > 0)
+                        {
+                            lokal.DatumOtvaranja = datum;
+                        }
+                        if (url != "")
+                        {
+                            lokal.Ikona = url;
+                        }
+                        de.upisiLokalUFile(Lokali);
+                        url = "";
+                        MessageBox.Show("Lokal je uspesno izmenjen");
                     }
-                    if (url != "")
+                    else
                     {
-                        lokal.Ikona = url;
+                        MessageBox.Show("Izaberite Lokal iz liste.");
                     }
-                    de.upisiLokalUFile(Lokali);
-                    url = "";
-                    MessageBox.Show("Lokal je uspesno izmenjen");
                 }
                 else
                 {
-                    MessageBox.Show("Izaberite Lokal iz liste.");
+                    MessageBox.Show("Molimo vas unesti ceo broj za kapacitet lokala.");
                 }
-            }
-            else {
-                MessageBox.Show("Molimo vas unesti ceo broj za kapacitet lokala.");
             }
             
         }

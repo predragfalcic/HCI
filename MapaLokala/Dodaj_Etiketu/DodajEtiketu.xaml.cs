@@ -88,17 +88,28 @@ namespace MapaLokala.Dodaj_Etiketu
             string oznaka = txt_oznakaEtikete.Text;
             string ime = txt_imeEtikete.Text;
             string opis = txt_opisEtikete.Text;
-            Etiketa et = pronadjiEtiketuPoOznaci(oznaka);
-            if (et == null)
+
+            if (oznaka.Length > 0 && ime.Length > 0 && opis.Length > 0 && url != null)
             {
-                Etiketa etiketa = new Etiketa(oznaka, ime, opis, url);
-                etikete.Add(etiketa);
-                upisiEtiketuUFile(etikete);
-                MessageBox.Show("Etiketa je uspesno sacuvana");
-                this.Close();
+                Etiketa et = pronadjiEtiketuPoOznaci(oznaka);
+
+
+                if (et == null)
+                {
+                    Etiketa etiketa = new Etiketa(oznaka, ime, opis, url);
+                    etikete.Add(etiketa);
+                    upisiEtiketuUFile(etikete);
+                    MessageBox.Show("Etiketa je uspesno sacuvana");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Etika sa tom oznakom vec postoji, molimo vas unesite drugu oznaku za etiketu.");
+                }
             }
-            else {
-                MessageBox.Show("Etika sa tom oznakom vec postoji, molimo vas unesite drugu oznaku za etiketu.");
+            else
+            {
+                MessageBox.Show("Da bi ste kreirali etiketu potrebno je popuniti sva polja. ");
             }
         }
 

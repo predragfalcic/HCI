@@ -1,1 +1,1 @@
-dsds|dsdsd|dsds|13|E2#E3#E13|novi|Ne sluzi se|Niske cene|True|False|True|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\two.jpg|17-Jun-16|True|True|229|352.04
+Lokal 1|lokal|neki lokal|44|E5#E6|novi|Ne sluzi se|Srednje cene|True|False|True|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|23-Jun-16|False|True|399.538333333333|634.736666666667
