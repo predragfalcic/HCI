@@ -1,3 +1,2 @@
-novi|novi tip lokala|neki tip lokala|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\intro.jpg
-Jos jedan tip lokala|Tip lokala 2|neki tip lokala|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\intro.jpg
-sdddd|ddd|dddd|C:\Pedja\Programiranje\Interakcija covek racunar\Projekat\Mapa Lokala\MapaLokala\MapaLokala\Slike\intro.jpg
+novi|novi tip lokala|neki tip lokala|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|False
+Jos jedan tip lokala|Tip lokala 2|neki tip lokala|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\intro.jpg|True

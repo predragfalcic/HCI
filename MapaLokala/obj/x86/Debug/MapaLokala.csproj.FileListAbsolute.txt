@@ -88,3 +88,31 @@ D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\
 D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\obj\x86\Debug\MapaLokala.g.resources
 D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\obj\x86\Debug\MapaLokala.Properties.Resources.resources
 D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\obj\x86\Debug\MapaLokala.csproj.GenerateResource.Cache
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.exe
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.pdb
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\bin\Debug\MapaLokala.exe
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\bin\Debug\MapaLokala.pdb
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\bin\Debug\EO.Base.dll
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\bin\Debug\EO.Wpf.xml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\bin\Debug\EO.Base.xml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.csprojResolveAssemblyReference.cache
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\DodajEtiketu.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\IzmenaEtiketa.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\DodajTipLokala.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\IzmenaTipovaLokala.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MainWindow.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\DodajEtiketu.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\IzmenaEtiketa.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\DodajLokal.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\DodajTipLokala.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\IzmenaTipovaLokala.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MainWindow.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\App.g.cs
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala_MarkupCompile.cache
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala_MarkupCompile.lref
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\DodajLokal.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.g.resources
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.Properties.Resources.resources
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\MapaLokala.csproj.GenerateResource.Cache
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.baml
+C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.g.cs

@@ -38,11 +38,21 @@ namespace MapaLokala.Dodaj_tip_lokala
             get { return ikonaTipaLokala; }
             set { ikonaTipaLokala = value; }
         }
+
+        bool obrisan;
+
+        public bool Obrisan
+        {
+            get { return obrisan; }
+            set { obrisan = value; }
+        }
+
         public TipLokala(string oznaka, string ime, string opis, string ikona) {
             this.OznakaTipaLokala = oznaka;
             this.Ime = ime;
             this.Opis = opis;
             this.IkonaTipaLokala = ikona;
+            this.Obrisan = false;
         }
 
         public TipLokala() { }
@@ -55,6 +65,7 @@ namespace MapaLokala.Dodaj_tip_lokala
             this.Ime = words[1];
             this.Opis = words[2];
             this.IkonaTipaLokala = words[3];
+            this.Obrisan = Boolean.Parse(words[4]);
         }
 
     }

@@ -70,7 +70,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dodaj_lokal\IzmenaLokala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dodaj_tip_lokala\DodajTipLokala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dodaj_tip_lokala\IzmenaTipovaLokala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,9 +101,16 @@
     <Compile Include="Dodaj_lokal\DodajLokal.xaml.cs">
       <DependentUpon>DodajLokal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dodaj_lokal\IzmenaLokala.xaml.cs">
+      <DependentUpon>IzmenaLokala.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dodaj_lokal\Lokal.cs" />
+    <Compile Include="Dodaj_lokal\UIHelpers.cs" />
     <Compile Include="Dodaj_tip_lokala\DodajTipLokala.xaml.cs">
       <DependentUpon>DodajTipLokala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_tip_lokala\IzmenaTipovaLokala.xaml.cs">
+      <DependentUpon>IzmenaTipovaLokala.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dodaj_tip_lokala\TipLokala.cs" />
     <Compile Include="MainWindow.xaml.cs">

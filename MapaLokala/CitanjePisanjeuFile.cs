@@ -29,7 +29,10 @@ namespace MapaLokala
             foreach (string line in lines)
             {
                 Lokal l = new Lokal(line);
-                listaLokala.Add(l);
+                if (l.Obrisan == false)
+                {
+                    listaLokala.Add(l);
+                }
             }
             return listaLokala;
         }
@@ -44,7 +47,10 @@ namespace MapaLokala
             foreach (string line in lines)
             {
                 TipLokala l = new TipLokala(line);
-                listaTipovaLokala.Add(l);
+                if (l.Obrisan == false)
+                {
+                    listaTipovaLokala.Add(l);
+                }
             }
             return listaTipovaLokala;
         }

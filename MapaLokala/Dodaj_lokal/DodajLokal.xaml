@@ -52,20 +52,17 @@
         <Image Name="img_ikonaLokala" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" Height="Auto" Width="Auto" Margin="3">
         </Image>
 
-        <RadioButton Name="rdb_hendikepirani_da" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" GroupName="rbtn_hendikepirani" Content="Da" IsChecked= "True"/>
-        <RadioButton Name="rdb_hendikepirani_ne" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" GroupName="rbtn_hendikepirani" Content="Ne" />
+        <CheckBox Name="rdb_hendikepirani_da" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Content="Da" IsChecked= "True"/>
 
-        <RadioButton Name="rdb_pusenje_da" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" GroupName="rbtn_pusenje" Content="Da" />
-        <RadioButton Name="rdb_pusenje_ne" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" GroupName="rbtn_pusenje" Content="Ne" IsChecked="True" />
+        <CheckBox Name="rdb_pusenje_da" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Content="Da" />
 
-        <RadioButton Name="rdb_rezervacije_da" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" GroupName="rbtn_rezervacije" Content="Da" IsChecked="True" />
-        <RadioButton Name="rdb_rezervacije_ne" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" GroupName="rbtn_rezervacije" Content="Ne" />
+        <CheckBox Name="rdb_rezervacije_da" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Content="Da" IsChecked="True"/>
 
         <ComboBox Name="cmb_kategorijeCena" Grid.Column="1" Grid.Row="9" IsEditable="False" ItemsSource="{Binding Path=kategorijeCena}"/>
 
         <TextBox Name="txt_kapacitetLokala" Grid.Column="1" Grid.Row="10" Width="Auto"></TextBox>
 
-        <DatePicker HorizontalAlignment="Left" Grid.Column="1" Grid.Row="11"
+        <DatePicker Name="dp_datum" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="11"
 		    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
 
         <!--<TextBlock Grid.Column="1" Grid.Row="11" HorizontalAlignment="Left" Margin="229,0,0,0">Godina: </TextBlock>-->

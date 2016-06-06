@@ -90,11 +90,12 @@ namespace MapaLokala.Dodaj_tip_lokala
 
             TipLokala tipLokala = new TipLokala(oznaka, ime, opis, url);
             tipoviLokala.Add(tipLokala);
-            upisiEtiketuUFile(tipoviLokala);
+            upisiTipLokalaUFile(tipoviLokala);
+            MessageBox.Show("Tip lokala je uspesno sacuvan");
             this.Close();
         }
 
-        private void upisiEtiketuUFile(ObservableCollection<TipLokala> listaTipova)
+        public void upisiTipLokalaUFile(ObservableCollection<TipLokala> listaTipova)
         {
             if (listaTipova != null)
             {
@@ -103,10 +104,9 @@ namespace MapaLokala.Dodaj_tip_lokala
                 //System.IO.StreamWriter file = new System.IO.StreamWriter("C:/Pedja/Programiranje/Interakcija covek racunar/Projekat/Mapa Lokala/MapaLokala/MapaLokala/Podaci/tipoviLokala.txt");
                 foreach (TipLokala e in listaTipova)
                 {
-                    string text = e.OznakaTipaLokala + "|" + e.Ime + "|" + e.Opis + "|" + e.IkonaTipaLokala;
+                    string text = e.OznakaTipaLokala + "|" + e.Ime + "|" + e.Opis + "|" + e.IkonaTipaLokala + "|" + e.Obrisan.ToString();
                     file.WriteLine(text);
                 }
-                MessageBox.Show("Tip lokala je uspesno sacuvan");
                 file.Close();
             }
             else

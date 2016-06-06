@@ -172,61 +172,67 @@ namespace MapaLokala.Dodaj_lokal
 
             int kapacitetLokala;
             if (Int32.TryParse(txt_kapacitetLokala.Text, out kapacitetLokala))
-                Console.WriteLine(kapacitetLokala);
+            {
+
+                if (rdb_hendikepirani_da.IsChecked == true)
+                {
+                    zaHendikepirane = true;
+                }
+                else
+                {
+                    zaHendikepirane = false;
+                }
+
+                if (rdb_pusenje_da.IsChecked == true)
+                {
+                    smePusenje = true;
+                }
+                else
+                {
+                    smePusenje = false;
+                }
+
+                if (rdb_rezervacije_da.IsChecked == true)
+                {
+                    primeRezervacije = true;
+                }
+                else
+                {
+                    primeRezervacije = false;
+                }
+
+                string tipLokala = cmb_TipLokala.SelectionBoxItem.ToString();
+                DodajTipLokala dtl = new DodajTipLokala();
+                tip = dtl.pronadjiTipPoNazivu(tipLokala);
+                string statusSluzenjaAlkohola = cmb_statusSluzenjaAlkohola.SelectionBoxItem.ToString();
+
+                string kategorijeCena = cmb_kategorijeCena.SelectionBoxItem.ToString();
+
+                IList etikete = new ObservableCollection<string>();
+                etikete = cmb_Etiketa.SelectedItems;
+
+                ObservableCollection<Etiketa> lista = new ObservableCollection<Etiketa>();
+                de = new DodajEtiketu();
+                foreach (string et in etikete)
+                {
+                    lista.Add(de.pronadjiEtiketuPoNazivu(et));
+                }
+
+                string datum = dp_datum.SelectedDate.Value.ToShortDateString();
+                Lokal lokal = new Lokal(oznakaLokala, imeLokala, opisLokala, kapacitetLokala, lista, tip, statusSluzenjaAlkohola, kategorijeCena, primeRezervacije, smePusenje, zaHendikepirane, url, datum);
+                lokali.Add(lokal);
+                upisiLokalUFile(lokali);
+                this.Close();
+            }
             else
+            {
                 MessageBox.Show("Molimo vas unesti ceo broj za kapacitet lokala.");
-
-            if (rdb_hendikepirani_da.IsChecked == true)
-            {
-                zaHendikepirane = true;
-            }
-            else if (rdb_hendikepirani_ne.IsChecked == true)
-            {
-                zaHendikepirane = false;
             }
 
-            if (rdb_pusenje_da.IsChecked == true)
-            {
-                smePusenje = true;
-            }
-            else if (rdb_pusenje_ne.IsChecked == true)
-            {
-                smePusenje = false;
-            }
-
-            if (rdb_rezervacije_da.IsChecked == true)
-            {
-                primeRezervacije = true;
-            }
-            else if (rdb_rezervacije_ne.IsChecked == true)
-            {
-                primeRezervacije = false;
-            }
-
-            string tipLokala = cmb_TipLokala.SelectionBoxItem.ToString();
-            DodajTipLokala dtl = new DodajTipLokala();
-            tip = dtl.pronadjiTipPoNazivu(tipLokala);
-            string statusSluzenjaAlkohola = cmb_statusSluzenjaAlkohola.SelectionBoxItem.ToString();
-
-            string kategorijeCena = cmb_kategorijeCena.SelectionBoxItem.ToString();
-
-            IList etikete = new ObservableCollection<string>();
-            etikete = cmb_Etiketa.SelectedItems;
-
-            ObservableCollection<Etiketa> lista = new ObservableCollection<Etiketa>();
-            de = new DodajEtiketu();
-            foreach (string et in etikete)
-            {
-                lista.Add(de.pronadjiEtiketuPoNazivu(et));
-            }
-
-            Lokal lokal = new Lokal(oznakaLokala, imeLokala, opisLokala, kapacitetLokala, lista, tip, statusSluzenjaAlkohola, kategorijeCena, primeRezervacije, smePusenje, zaHendikepirane, url);
-            lokali.Add(lokal);
-            upisiLokalUFile(lokali);
-            this.Close();
+            
         }
 
-        private void upisiLokalUFile(ObservableCollection<Lokal> listaLokala)
+        public void upisiLokalUFile(ObservableCollection<Lokal> listaLokala)
         {
             if (listaLokala != null)
             {
@@ -239,20 +245,35 @@ namespace MapaLokala.Dodaj_lokal
 
                     foreach (Etiketa etiketa in e.Lista_etiketa)
                     {
-                        sveEtikete += etiketa.OznakaEtikete + "#";
+                        //MessageBox.Show(etiketa.OznakaEtikete);
+                        sveEtikete += etiketa.OznakaEtikete.ToString() + "#";
                     }
-                    sveEtikete = sveEtikete.Remove(sveEtikete.Length - 1);
-
-                    string text = e.Oznaka + "|" + e.Ime + "|" + e.Opis + "|" + e.KapacitetLokala.ToString() + "|" + sveEtikete + "|" + e.TipLokala.OznakaTipaLokala + "|" + e.StatusSluzenjaAlkohola + "|" + e.KategorijaCena + "|" + e.Rezervacija.ToString() + "|" + e.Pusenje.ToString() + "|" + e.Hendikepirani.ToString() + "|" + e.Ikona;
+                    if (sveEtikete.Length > 0)
+                    {
+                        sveEtikete = sveEtikete.Remove(sveEtikete.Length - 1);
+                    }
+                    string text = e.Oznaka + "|" + e.Ime + "|" + e.Opis + "|" + e.KapacitetLokala.ToString() + "|" + sveEtikete + "|" + e.Tiplokala.OznakaTipaLokala + "|" + e.StatusSluzenjaAlkohola + "|" + e.KategorijaCena + "|" + e.Rezervacija.ToString() + "|" + e.Pusenje.ToString() + "|" + e.Hendikepirani.ToString() + "|" + e.Ikona + "|" + e.DatumOtvaranja + "|" + e.Obrisan.ToString() + "|" + e.NaMapi.ToString() + "|" + e.X + "|" + e.Y;
                     file.WriteLine(text);
                 }
-                MessageBox.Show("Lokal je uspesno sacuvana");
+                
                 file.Close();
             }
             else
             {
-                MessageBox.Show("Lokal nije uspesno sacuvana");
+                MessageBox.Show("Lokal nije uspesno sacuvan");
             }
+        }
+
+        public Lokal pronadjiLokalPoOznaci(string oznaka)
+        {
+            foreach (Lokal e in lokali)
+            {
+                if (oznaka.Equals(e.Oznaka) && e.Obrisan == false)
+                {
+                    return e;
+                }
+            }
+            return null;
         }
     }
 }
