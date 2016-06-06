@@ -118,3 +118,33 @@ C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaL
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.g.cs
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\LogiWindow.baml
 C:\Users\pedja\Documents\GitHub\HCI\MapaLokala\obj\x86\Debug\LogiWindow.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.exe
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.pdb
+F:\Interakcija covek racunar\Projekat\MapaLokala\bin\Debug\MapaLokala.exe
+F:\Interakcija covek racunar\Projekat\MapaLokala\bin\Debug\MapaLokala.pdb
+F:\Interakcija covek racunar\Projekat\MapaLokala\bin\Debug\EO.Base.dll
+F:\Interakcija covek racunar\Projekat\MapaLokala\bin\Debug\EO.Wpf.xml
+F:\Interakcija covek racunar\Projekat\MapaLokala\bin\Debug\EO.Base.xml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.csprojResolveAssemblyReference.cache
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\DodajEtiketu.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\IzmenaEtiketa.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\DodajTipLokala.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\IzmenaTipovaLokala.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\LogiWindow.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MainWindow.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\DodajEtiketu.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_Etiketu\IzmenaEtiketa.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_lokal\DodajLokal.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_lokal\IzmenaLokala.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\DodajTipLokala.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_tip_lokala\IzmenaTipovaLokala.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\LogiWindow.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MainWindow.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\App.g.cs
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala_MarkupCompile.cache
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala_MarkupCompile.lref
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\Dodaj_lokal\DodajLokal.baml
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.g.resources
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.Properties.Resources.resources
+F:\Interakcija covek racunar\Projekat\MapaLokala\obj\x86\Debug\MapaLokala.csproj.GenerateResource.Cache

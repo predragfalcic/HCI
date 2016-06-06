@@ -260,20 +260,39 @@ namespace MapaLokala
                     img.Height = 50;
                     img.Width = 50;
                     img.Source = imageSource;
-                    img.SetValue(Canvas.LeftProperty, p.X);
-                    img.SetValue(Canvas.TopProperty, p.Y);
-                    img_mapa.Children.Add(img);
-
-                    lokal.NaMapi = true;
-                    lokal.X = p.X;
-                    lokal.Y = p.Y;
+                    bool zauzeto = false;
                     foreach (Lokal l in listaLokalaNaMapi) {
-                        lokali.Add(l);
+                        MessageBox.Show(l.X.ToString());
+                        MessageBox.Show(p.X.ToString());
+                        if (l.X == p.X && l.Y == p.Y)
+                        {
+                            zauzeto = true;
+                            break;
+                        }
                     }
-                    dl.upisiLokalUFile(lokali);
-                    razvrstajLokale();
-                    izbaciLokaleSaMape();
-                    OnPropertyChanged("PretrazeniLokali");
+
+                    if (zauzeto == false)
+                    {
+                        img.SetValue(Canvas.LeftProperty, p.X);
+                        img.SetValue(Canvas.TopProperty, p.Y);
+                        img_mapa.Children.Add(img);
+
+                        lokal.NaMapi = true;
+                        lokal.X = p.X;
+                        lokal.Y = p.Y;
+                        foreach (Lokal lo in listaLokalaNaMapi)
+                        {
+                            lokali.Add(lo);
+                        }
+                        dl.upisiLokalUFile(lokali);
+                        razvrstajLokale();
+                        izbaciLokaleSaMape();
+                        OnPropertyChanged("PretrazeniLokali");
+                    }
+                    else {
+                        MessageBox.Show("Na toj poziciji vec postoji lokal.");
+                    }
+                    
                 }
 
                 

@@ -1,1 +1,2 @@
-Lokal 1|lokal|neki lokal|44|E5#E6|novi|Ne sluzi se|Srednje cene|True|False|True|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|23-Jun-16|False|True|399.538333333333|634.736666666667
+Lokal 1|lokal|neki lokal|44|E5#E6|novi|Ne sluzi se|Srednje cene|True|False|True|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\images.jpg|23-Jun-16|False|True|0.538333333333412|0.736666666666665
+L 2|jos neki lokal|lokal|123|E3#E5|novi|Ne sluzi se|Niske cene|True|False|True|D:\Programiranje\Interakcija covek racunar\Pravi projekat\MapaLokala\MapaLokala\Slike\intro.jpg|14-Jun-16|False|False|1.53833333333341|0.736666666666665
